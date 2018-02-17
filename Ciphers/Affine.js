@@ -10,7 +10,6 @@ function encode()
     // check if character is either upper or lower case
     lowerCase = lowerAlphabet.indexOf(plain_text[idx]);
     upperCase = upperAlphabet.indexOf(plain_text[idx]);
-
     // if character is not lower case
     if(lowerCase == -1)
     {
@@ -18,7 +17,8 @@ function encode()
       if(upperCase != -1)
       {
         // change character to encoded character and add to cypher_text
-        var coded = (upperCase + 13) % 26;
+        //  ENCODE UPPERCASE CHARACTER
+        var coded = (5 * upperCase + 8) % 26;
         var letter = upperAlphabet[coded];
         cypher_text.push(letter);
       }
@@ -33,7 +33,8 @@ function encode()
     else
     {
       // change character to encoded character and add to cypher_text
-      var coded = (lowerCase + 13) % 26;
+      //  ENCODE LOWERCASE CHARACTER
+      var coded = (5 * lowerCase + 8) % 26;
       var letter = lowerAlphabet[coded];
       cypher_text.push(letter);
     }
@@ -41,3 +42,33 @@ function encode()
   // Put cypher_text in encryptedMessage
   document.getElementById("encryptedMessage").innerHTML = cypher_text.join("");
 }
+
+
+
+
+
+//   plaintext	    A	 F	F	 I	N	 E	C	 I	P	 H	E	 R
+//       x	        0	 5	5	 8	13 4	2	 8	15 7	4	 17
+//   (5x + 8)	      8	 33	33 48	73 28	18 48	83 43	28 93
+//(5x + 8) mod 26   8	 7	7	 22 21 2	18 22 5	 17 2	 15
+//  ciphertext	    I	 H	H	 W	V	 C	S	 W	F	 R	C	 P
+
+//   a > 0 > 8 > 8 > i
+
+
+
+
+
+
+
+/*
+// If the character is upper case
+if(upperCase != -1)
+{
+  // change character to encoded character and add to cypher_text
+  //  ENCODE UPPERCASE CHARACTER
+  var coded = (5 * (upperAlphabet.indexOf(upperCase)) + 8) % 26;
+  var letter = upperAlphabet[coded];
+  cypher_text.push(letter);
+}
+*/

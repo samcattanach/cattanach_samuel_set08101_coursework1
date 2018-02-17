@@ -22,12 +22,12 @@ ul{
   display: inline;
   position: absolute;
     top: 8px;
-    left: 610px;
+    left: 330px;
   font-family: "Intro-Cond-Black-Free", Arial, sans-serif;
 }
 nav ul{list-style: none; text-align: left;}
 nav ul li{display: inline; padding-right:1.1em; font-weight:bold; font-size:1.6em;}
-nav ul li a{color:#0060ab; text-decoration:none; background-color: #2e2e2f; padding-right: 3px; padding-left: 3px; border-radius: 5px;}
+nav ul li a{color:#0060ab; text-decoration:none;}
 nav ul li a:hover{color:#682E97;}
 nav ul li a:active{color:#682E97;}
 #Title{
@@ -66,14 +66,81 @@ small{
   font-family: "Intro-Cond-Light-Free", Arial, sans-serif;
 }
 
-@font-face {
-  font-family: Intro-Cond-Black-Free;
-  src: url('Fonts/Intro-Cond-Black-Free.otf');
+
+h2{
+  padding-bottom: 20px;
+  font-size: 2.5em;
+  font-family: Arial, sans-serif;
 }
-@font-face {
-  font-family: Intro-Cond-Light-Free;
-  src: url('Fonts/Intro-Cond-Light-Free.otf');
+
+select{
+  display:inline-block;
+  margin-right: 500px;
+  margin-left: 20px;
+  font-size: 1.5em;
+  background: #0060ab;
+  border-color: inherit;
+  border-radius: 2px;
+  margin-bottom: 20px;
 }
+select option{font-size: 18px; background: #dddddd;}
+
+textarea{
+  font-size: 1.8em;
+  font-family: Arial;
+  border: solid #dedede 10px;
+  background-color: #dddddd;
+  border-radius: 5px;
+}
+
+#input{
+  width: 10%;
+  margin-right: 350px;
+  display:inline-block;
+  padding-bottom: 10px;
+}
+
+#output{
+  width: 10%;
+  display:inline-block;
+}
+
+
+
+/* Bottom cipher information */
+
+#cipherInfo{
+  background: #222121;
+  padding: 60px 60px 20px 60px;
+  margin-top: 20px;
+  height: 399px;
+  width: 980px;
+  right: 50px;
+  position: relative;
+}
+
+#description{
+  width: 500px;
+  display: inline-block;
+  padding-right: 10px;
+  padding-left: 30px;
+  font-family: Arial;
+  text-align: justify;
+
+}
+img{
+  width: 350px;
+  border-radius: 2px;
+}
+#picture{
+float: left;
+}
+
+
+
+
+
+
 
 /* DROPDOWN MENU */
 .dropdown {
@@ -101,64 +168,12 @@ small{
 .show {display:block;}
 
 
-/* CIPHERS */
-h2{
-  padding-bottom: 20px;
-  padding-top: -20px;
-  font-size: 2.5em;
-  font-family: Arial, sans-serif;
+
+@font-face {
+  font-family: Intro-Cond-Black-Free;
+  src: url('Fonts/Intro-Cond-Black-Free.otf');
 }
-
-textarea{
-  font-size: 1.8em;
-  font-family: Ariel;
-  border: solid #dedede 10px;
-  background-color: #dddddd;
-  border-radius: 5px;
-}
-
-#input{
-  width: 10%;
-  margin-right: 350px;
-  display:inline-block;
-  padding-bottom: 10px;
-}
-
-#output{
-  width: 10%;
-  display:inline-block;
-}
-
-
-
-/* Bottom cipher information */
-
-#cipherInfo{
-  background: #222121;
-  border: 0px 50px 50px 50px;
-  padding-left: 30px;
-  padding-bottom: 80px;
-  width: 1070px;
-  left: -50px;
-  top: 58px;
-  position: relative;
-}
-
-#description{
-  width: 500px;
-  display: inline-block;
-  padding-right: 10px;
-  font-family: Arial;
-  text-align: justify;
-
-}
-img{
-  width: 350px;
-  border-radius: 2px;
-}
-#picture{
-  display: inline-block;
-  width: 300px;
-  position: relative;
-  top: 50px;
+@font-face {
+  font-family: Intro-Cond-Light-Free;
+  src: url('Fonts/Intro-Cond-Light-Free.otf');
 }

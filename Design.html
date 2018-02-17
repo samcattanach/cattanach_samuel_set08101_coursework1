@@ -2,28 +2,38 @@
 <html>
 <head>
   <title>Design</title>
-  <link rel="stylesheet" href="Index.css">
+  <link rel="stylesheet" href="Design.css">
+  <script src="DropDownMenu.js"></script>
 
 
 
 </head>
 <body>
-  <header>
-    <ul>
-      <li><a href="Index.html">Home</a></li>
-      <li><a href="Design.html">Design</a></li>
-    </ul>
-  </header>
+  <div id="container">
 
-  <h1>Lorem Ipsum</h1>
+    <nav>
+      <h1 id="Title"><a href="Index.html">Cyphers</a></h1>
+      <ul>
+        <li><a onclick="dropDown()" class="dropbtn">Types</a></li>
+        <li><a href="Design.html">Design</a></li>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="Ciphers/Caesar.html">Caesar</a>
+          <a href="Ciphers/Affine.html">Affine</a>
+          <a href="Ciphers/Base64.html">Base64</a>
+        </div>
+      </ul>
+    </nav>
+
+    <div id="main">
+      <h2>Design</h2>
 
 
-  <div>
-
+      <p></p>
+    </div>
   </div>
 
-
   <footer>
-
+    <small>2018 SAMUEL CATTANACH</small>
   </footer>
 </body>
+</html>

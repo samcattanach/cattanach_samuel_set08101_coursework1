@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Caesar</title>
+  <link rel="stylesheet" href="../Main.css">
+  <script src="../DropDownMenu.js"></script>
+  <script type="text/javascript" src="Caesar.js"></script>
+
+
+
+</head>
+<body>
+  <div id="container">
+
+    <nav>
+      <h1 id="Title"><a href="../Index.html">Cyphers</a></h1>
+      <ul>
+        <li><a onclick="dropDown()" class="dropbtn">Types</a></li>
+        <li><a href="../Design.html">Design</a></li>
+        <div id="myDropdown" class="dropdown-content">
+          <a href="Caesar.html">Caesar</a>
+          <a href="Affine.html">Affine</a>
+          <a href="Base64.html">Base64</a>
+        </div>
+      </ul>
+    </nav>
+
+
+    <div id="main">
+      <h2>Caesar</h2>
+      <select id="rotValue" onchange="encode();">
+	      <option value=1>ROT1</option>
+	      <option value=2>ROT2</option>
+	      <option value=3>ROT3</option>
+	      <option value=4>ROT4</option>
+	      <option value=5>ROT5</option>
+	      <option value=6>ROT6</option>
+	      <option value=7>ROT7</option>
+	      <option value=8>ROT8</option>
+	      <option value=9>ROT9</option>
+	      <option value=10>ROT10</option>
+	      <option value=11>ROT11</option>
+	      <option value=12>ROT12</option>
+	      <option value=13 selected>ROT13</option>
+	      <option value=14>ROT14</option>
+	      <option value=15>ROT15</option>
+	      <option value=16>ROT16</option>
+	      <option value=17>ROT17</option>
+	      <option value=18>ROT18</option>
+	      <option value=19>ROT19</option>
+	      <option value=20>ROT20</option>
+	      <option value=21>ROT21</option>
+	      <option value=22>ROT22</option>
+	      <option value=23>ROT23</option>
+	      <option value=24>ROT24</option>
+	      <option value=25>ROT25</option>
+      </select>
+      <div id="input">
+        <textarea id="message" rows="6" cols="25" autofocus onkeyup="encode();" onchange="encode();"></textarea>
+      </div>
+      <div id="output">
+        <textarea id="encryptedMessage" rows="6" cols="25" readonly></textarea>
+      </div>
+      </br>
+
+
+      <div id="cipherInfo">
+        <div id="description">
+          ROT13 replaces each letter by its partner 13 characters further along the alphabet.
+           For example, HELLO becomes URYYB (or, conversely, URYYB becomes HELLO again).
+        </div>
+        <div id="picture">
+          <img src="https://qph.ec.quoracdn.net/main-qimg-52cc0c449a5d24a5ee9586b244f125b4" alt="caesar"></img>
+        </div>
+        </br>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <small>2018 SAMUEL CATTANACH</small>
+  </footer>
+</body>
+</html>
