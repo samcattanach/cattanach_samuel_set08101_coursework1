@@ -5,16 +5,14 @@
   <link rel="stylesheet" href="../Main.css">
   <script src="../DropDownMenu.js"></script>
   <script type="text/javascript" src="Base64.js"></script>
-
-
-
 </head>
 <body>
   <div id="container">
-
     <nav>
+      <!-- Navigation bar with title and links to other pages-->
       <h1 id="Title"><a href="../Index.html">Cyphers</a></h1>
       <ul>
+        <!-- interactive drop-down menu for links to cypher pages-->
         <li><a onclick="dropDown()" class="dropbtn">Types</a></li>
         <li><a href="../Design.html">Design</a></li>
         <div id="myDropdown" class="dropdown-content">
@@ -25,32 +23,34 @@
       </ul>
     </nav>
 
-
+    <!-- Main element including text areas to input text and get encrypted or decrypted
+    output, description and picture of cypher-->
     <div id="main">
       <h2>Base64</h2>
+      <!--Buttons to change between encrypting and decrypting text-->
+      <a id="encrypt" href="#" onclick="Encrypt();"> Encrypt Text </a>
+      <a id="decrypt" href="#" onclick="Decrypt();"> Decrypt Text </a>
+      </br>
       <div id="input">
-        <textarea id="message" rows="6" cols="25" required autofocus onkeyup="encode();" onchange="encode();"></textarea>
+        <textarea id="message" rows="6" cols="25" required autofocus placeholder="Input" onkeyup="Encrypt();" onchange="Encrypt();"></textarea>
       </div>
       <div id="output">
-        <textarea id="encryptedMessage" rows="6" cols="25" readonly></textarea>
+        <textarea id="encryptedMessage" rows="6" cols="25" readonly placeholder="Output"></textarea>
       </div>
       </br>
-
-
       <div id="cipherInfo">
         <div id="description">
           Base64 is a group of similar binary-to-text encoding schemes that represent binary data in an ASCII string format by translating it into a radix-64 representation. The term Base64 originates from a specific MIME content transfer encoding.
           Each base64 digit represents exactly 6 bits of data. Three 8-bit bytes (i.e., a total of 24 bits) can therefore be represented by four 6-bit base64 encodings.
-
         </div>
         <div id="picture">
-          <img src="http://4.bp.blogspot.com/-M2Yvz1tpBA4/UaOSji6vF-I/AAAAAAAANlw/pirPnSSqI_U/s1600/tcp2_0304.gif" alt="Base64"></img>
+          <img src="../Pictures/base64.png" alt="Base64"></img>
+        </br> &nbsp Source: https://en.wikipedia.org/wiki/Base64
         </div>
         </br>
       </div>
     </div>
   </div>
-
   <footer>
     <small>2018 SAMUEL CATTANACH</small>
   </footer>

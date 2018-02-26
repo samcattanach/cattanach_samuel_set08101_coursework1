@@ -1,16 +1,16 @@
-function encode()
+function Encrypt()
 {
-  var rotValue = parseInt(document.getElementById("rotValue").value);
+  var rotation = parseInt(document.getElementById("rotation").value);
   var plain_text = document.getElementById("message").value;
   var cypher_text = [];
-  var lowerAlphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-  var upperAlphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
+  var lowerCaseAlphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  var upperCaseAlphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']
   // for each letter in message
   for(var idx = 0; idx < plain_text.length; idx++)
   {
     // check if character is either upper or lower case
-    lowerCase = lowerAlphabet.indexOf(plain_text[idx]);
-    upperCase = upperAlphabet.indexOf(plain_text[idx]);
+    lowerCase = lowerCaseAlphabet.indexOf(plain_text[idx]);
+    upperCase = upperCaseAlphabet.indexOf(plain_text[idx]);
 
     // if character is not lower case
     if(lowerCase == -1)
@@ -18,9 +18,9 @@ function encode()
       // If the character is upper case
       if(upperCase != -1)
       {
-        // change character to encoded character and add to cypher_text
-        var coded = (upperCase + rotValue) % 26;
-        var letter = upperAlphabet[coded];
+        // change character to Encryptd character and add to cypher_text
+        var coded = (upperCase + rotation) % 26;
+        var letter = upperCaseAlphabet[coded];
         cypher_text.push(letter);
       }
       // else character is not a letter
@@ -33,12 +33,68 @@ function encode()
     // the character is lower case
     else
     {
-      // change character to encoded character and add to cypher_text
-      var coded = (lowerCase + rotValue) % 26;
-      var letter = lowerAlphabet[coded];
+      // change character to Encryptd character and add to cypher_text
+      var coded = (lowerCase + rotation) % 26;
+      var letter = lowerCaseAlphabet[coded];
       cypher_text.push(letter);
     }
   }
   // Put cypher_text in encryptedMessage
   document.getElementById("encryptedMessage").innerHTML = cypher_text.join("");
+// Change colour of buttons
+  document.getElementById("encrypt").style.background = "#dddddd";
+  document.getElementById("decrypt").style.background = "#a7a7a7";
+}
+
+
+
+function Decrypt()
+{
+  var rotation = parseInt(document.getElementById("rotation").value);
+
+  rotation = rotation * (-1);
+
+  var plain_text = document.getElementById("message").value;
+  var cypher_text = [];
+  var lowerCaseAlphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+  var upperCaseAlphabet = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+  // for each letter in message
+  for(var idx = 0; idx < plain_text.length; idx++)
+  {
+    // check if character is either upper or lower case
+    lowerCase = lowerCaseAlphabet.indexOf(plain_text[idx]);
+    upperCase = upperCaseAlphabet.indexOf(plain_text[idx]);
+
+    // if character is not lower case
+    if(lowerCase == -1)
+    {
+      // If the character is upper case
+      if(upperCase != -1)
+      {
+        // change character to Encryptd character and add to cypher_text
+        var coded = (upperCase + rotation + 26) % 26;
+        var letter = upperCaseAlphabet[coded];
+        cypher_text.push(letter);
+      }
+      // else character is not a letter
+      else
+      {
+      // add character onto cypher_text
+      cypher_text.push(plain_text[idx]);
+      }
+    }
+    // the character is lower case
+    else
+    {
+      // change character to Encryptd character and add to cypher_text
+      var coded = (lowerCase + rotation + 26) % 26;
+      var letter = lowerCaseAlphabet[coded];
+      cypher_text.push(letter);
+    }
+  }
+  // Put cypher_text in encryptedMessage
+  document.getElementById("encryptedMessage").innerHTML = cypher_text.join("");
+// Change colour of buttons
+  document.getElementById("encrypt").style.background = "#a7a7a7";
+  document.getElementById("decrypt").style.background = "#dddddd";
 }

@@ -5,16 +5,14 @@
   <link rel="stylesheet" href="../Main.css">
   <script src="../DropDownMenu.js"></script>
   <script type="text/javascript" src="ROT13.js"></script>
-
-
-
 </head>
 <body>
   <div id="container">
-
+    <!-- Navigation bar with title and links to other pages-->
     <nav>
       <h1 id="Title"><a href="../Index.html">Cyphers</a></h1>
       <ul>
+        <!-- interactive drop-down menu for links to cypher pages-->
         <li><a onclick="dropDown()" class="dropbtn">Types</a></li>
         <li><a href="../Design.html">Design</a></li>
         <div id="myDropdown" class="dropdown-content">
@@ -25,10 +23,15 @@
       </ul>
     </nav>
 
-
+    <!-- Main element including text areas to input text and get encrypted or decrypted
+    output, description and picture of cypher-->
     <div id="main">
       <h2>ROT13</h2>
-      <select id="rotValue" onchange="encode();">
+      <!--Buttons to change between encrypting and decrypting text-->
+      <a id="encrypt" href="#" onclick="Encrypt();"> Encrypt Text </a>
+      <a id="decrypt" href="#" onclick="Decrypt();"> Decrypt Text </a>
+      <!--select element to change the rotation of the encryption-->
+      <select id="rotation" onchange="Encrypt();">
 	      <option value=1>ROT1</option>
 	      <option value=2>ROT2</option>
 	      <option value=3>ROT3</option>
@@ -55,15 +58,14 @@
 	      <option value=24>ROT24</option>
 	      <option value=25>ROT25</option>
       </select>
+      </br>
       <div id="input">
-        <textarea id="message" rows="6" cols="25" autofocus onkeyup="encode();" onchange="encode();"></textarea>
+        <textarea id="message" rows="6" cols="25" autofocus placeholder="Input" onkeyup="Encrypt();" onchange="Encrypt();"></textarea>
       </div>
       <div id="output">
-        <textarea id="encryptedMessage" rows="6" cols="25" readonly></textarea>
+        <textarea id="encryptedMessage" rows="6" cols="25" readonly placeholder="Output"></textarea>
       </div>
       </br>
-
-
       <div id="cipherInfo">
         <div id="description">
           ROT13 replaces each letter by its partner 13 characters further along the alphabet.
@@ -71,12 +73,12 @@
         </div>
         <div id="picture">
           <img src="https://qph.ec.quoracdn.net/main-qimg-52cc0c449a5d24a5ee9586b244f125b4" alt="ROT13"></img>
+        </br> &nbsp Source: https://en.wikipedia.org/wiki/ROT13
         </div>
         </br>
       </div>
     </div>
   </div>
-
   <footer>
     <small>2018 SAMUEL CATTANACH</small>
   </footer>
